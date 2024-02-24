@@ -1,15 +1,41 @@
 import { Link } from "react-router-dom";
 import { CircleUserRound, LockKeyhole } from "lucide-react";
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+
+    if (email === storedEmail && password === storedPassword) {
+      setTimeout(() => {
+        alert(`Bem vindo, ${storedEmail}`);
+      }, 5000);
+      window.location.href = "/dashboard";
+    } else if (email === "" || password === "") {
+      setError("Preencha todos os campos.");
+    } else {
+      setError("Email ou senha incorretos.");
+    }
+  };
+
   return (
     <div className="border-2 border-indigo-300 rounded-lg p-10 shadow-lg backfrop-filter backdrop-blur-sm bg-opacity-35 relative">
       <h1 className="text-4xl text-indigo-100 font-bold text-center mb-6 ">
         Login
       </h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="relative my-4">
           <input
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             placeholder="username@email.com"
             type="email"
             className="h-8 block w-72 py-3 text-sm text-zinc-300 bg-transparent border-2 rounded  border-b-3 border-indigo-400 appearance-none px-2   focus:outline-none focus:ring focus:ring-pink-200 "
@@ -21,6 +47,8 @@ const Login = () => {
         </div>
         <div className="relative my-4">
           <input
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
             placeholder="****"
             type="password"
             className="h-8 block w-72 py-3 text-sm text-zinc-300 bg-transparent border-2 rounded  border-b-3 border-indigo-400 appearance-none px-2  focus:outline-none focus:ring focus:ring-pink-300 "
@@ -36,12 +64,14 @@ const Login = () => {
         <div className="flex justify-between items-center">
           <div className="text-indigo-100 text-sm font-thin flex gap-2 items-center">
             <input type="checkbox" name="" id="" />
-            <label htmlFor="Lembre-se de mim">Resgatar senha</label>
+            <label htmlFor="Lembre-se de mim">Lembre de mim</label>
           </div>
           <Link to="/" className="text-indigo-300 text-sm font-thin">
             Esqueceu a senha?
           </Link>
         </div>
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
         <button
           type="submit"
           className="w-full mb-4 text-[14px] mt-6 h-7 rounded-full bg-pink-100 text-zinc-800 duration-150 hover:bg-indigo-400 hover:text-white"

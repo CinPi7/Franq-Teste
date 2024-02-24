@@ -2,6 +2,7 @@ import LOGO from "./assets/LOGO.svg";
 import Login from "./components/Login";
 import { Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -15,12 +16,14 @@ function App() {
         style={{ backgroundImage: "url('./src/assets/background.png')" }}
       >
         <Routes>
+          <Route path="/" element={<Login />} />
           <Route path="Login" element={<Login />} />
           <Route path="Register" element={<Register />} />
+          <Route path="Dashboard" element={<Dashboard />} />
         </Routes>
       </div>
 
-      <footer className="inset-x-0 bottom-0 relative h-44 w-auto bg-gray-800">
+      <footer className="inset-x-0 bottom-0 relative h-44 w-auto bg-zinc-900 border-t-2 border-slate-300">
         <p className="flex items-center justify-center h-5/6">
           <a
             href="https://github.com/CinPi7/Franq"
