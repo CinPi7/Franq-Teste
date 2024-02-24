@@ -1,11 +1,24 @@
 import { Link } from "react-router-dom";
 import { CircleUserRound, LockKeyhole } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+    const storedRememberMe = localStorage.getItem("rememberMe");
+
+    if (storedRememberMe === "true" && storedEmail && storedPassword) {
+      setEmail(storedEmail);
+      setPassword(storedPassword);
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,15 +27,26 @@ const Login = () => {
     const storedPassword = localStorage.getItem("password");
 
     if (email === storedEmail && password === storedPassword) {
+      if (rememberMe) {
+        localStorage.setItem("rememberMe", "true");
+      } else {
+        localStorage.removeItem("rememberMe");
+      }
+
       setTimeout(() => {
         alert(`Bem vindo, ${storedEmail}`);
       }, 5000);
+
       window.location.href = "/dashboard";
     } else if (email === "" || password === "") {
       setError("Preencha todos os campos.");
     } else {
       setError("Email ou senha incorretos.");
     }
+  };
+
+  const handleRememberMeChange = () => {
+    setRememberMe(!rememberMe);
   };
 
   return (
@@ -63,8 +87,14 @@ const Login = () => {
         </div>
         <div className="flex justify-between items-center">
           <div className="text-indigo-100 text-sm font-thin flex gap-2 items-center">
-            <input type="checkbox" name="" id="" />
-            <label htmlFor="Lembre-se de mim">Lembre de mim</label>
+            <input
+              type="checkbox"
+              name="rememberMe"
+              id="rememberMe"
+              checked={rememberMe}
+              onChange={handleRememberMeChange}
+            />
+            <label htmlFor="rememberMe">Lembre-se de mim</label>
           </div>
           <Link to="/" className="text-indigo-300 text-sm font-thin">
             Esqueceu a senha?

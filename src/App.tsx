@@ -1,6 +1,6 @@
 import LOGO from "./assets/LOGO.svg";
 import Login from "./components/Login";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 
@@ -8,7 +8,9 @@ function App() {
   return (
     <div className="h-screen">
       <div className="py-8 mx-8 flex items-center justify-between">
-        <img src={LOGO} alt="franq-logo" />
+        <Link to="/login">
+          <img src={LOGO} alt="franq-logo" />
+        </Link>
         <div className="bg-indigo-400 border-10 h-12 w-12 rounded-full"></div>
       </div>
       <div
