@@ -51,6 +51,7 @@ interface USD {
 
 const Dashboard = () => {
   const [filter, setFilter] = useState("");
+  const [color, setColor] = useState("");
 
   const { data: dataResponse, isLoading } = useQuery<DataResponse>({
     queryKey: ["currency"],
@@ -65,9 +66,19 @@ const Dashboard = () => {
     },
   });
 
-  // if (isLoading) {
-  //   return null;
-  // }
+  function getVariationColors(variation: number) {
+    if (variation > 0) {
+      return "green";
+    } else if (variation < 0) {
+      return "red";
+    } else {
+      return "blue";
+    }
+  }
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <div className="py-10 space-y-8 mx-8">
@@ -132,13 +143,23 @@ const Dashboard = () => {
                       <TableCell>
                         <div className="flex flex-col">
                           <span className="font-medium text-zinc-100">
-                            {getInfoCurrency.sell}
+                            {getInfoCurrency.sell
+                              ? getInfoCurrency.sell
+                              : "____"}
                           </span>
                         </div>
                       </TableCell>
                       <TableCell>
                         <div className="flex flex-col">
-                          <span className="font-medium text-zinc-100">
+                          <span
+                            className={`font-medium ${
+                              getInfoCurrency.variation > 0
+                                ? "text-green-400"
+                                : getInfoCurrency.variation < 0
+                                ? "text-red-300"
+                                : "text-blue-200"
+                            }`}
+                          >
                             {getInfoCurrency.variation}
                           </span>
                         </div>

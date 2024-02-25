@@ -8,11 +8,11 @@ import { Plus } from "lucide-react";
 
 function App() {
   return (
-    <div className="h-min my-6">
+    <div className="">
       <Header />
 
       <div
-        className="bg-cover bg-repeat flex justify-center y-3 h-min"
+        className="bg-cover bg-repeat flex justify-center h-[100vh]"
         style={{
           backgroundImage: "url('./src/assets/background.jpg')",
         }}
