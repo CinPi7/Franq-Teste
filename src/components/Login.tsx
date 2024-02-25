@@ -54,11 +54,11 @@ const Login = () => {
   };
 
   return (
-    <div className="border-2 border-indigo-300 rounded-lg p-10 shadow-lg backfrop-filter backdrop-blur-sm bg-opacity-35 relative">
+    <div className="max-h-full px-6 py-6 bg-slate-700 border-2 border-indigo-300 rounded-lg  shadow-lg backfrop-filter bg-opacity-65 backdrop-blur-sm">
       <h1 className="text-4xl text-indigo-100 font-bold text-center mb-6 ">
         Login
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="overflow-auto pb-4">
         <div className="relative my-4">
           <input
             required
