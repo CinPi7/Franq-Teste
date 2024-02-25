@@ -4,18 +4,12 @@ Teste Técnico!
 
 ➜ Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras.
 
-O desafio consiste em criar uma interface, onde será possível resgatar os dados da API https://hgbrasil.com/status/finance/ - .
-
-1. A UI possui tela inicial de login, e caso o usuário não possua cadastro, deve
-   realizar o cadastro e persistir o usuário em local storage;
+1. A UI possui tela inicial de login e registro de novo usuário, contendo campos de email e senha, com persistência destes em local storage. Os erros estão sendo tratados, de modo a deixar visível a ação desejada do usuário. Para melhorias, seria interessante armazenar os dados de maneira segura, evitando vulnerabilidades como XSS (Cross-Site Scripting) e outros tipos de ataques.
 
 ---
 
 ● Conectar a aplicação à API https://hgbrasil.com/status/finance/ e buscar dados da
 cotação de 10 itens (moedas, ações, etc.);
-
-● Deve haver uma tela inicial de login, e caso o usuário não possua cadastro, deve
-realizar o cadastro e persistir o usuário em local storage;
 
 ● Para navegar na aplicação, o usuário deve estar autenticado, portanto, deve-se
 verificar se o tempo de sessão ainda está ativo, e quando for inativo, o usuário deve

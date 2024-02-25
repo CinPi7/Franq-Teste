@@ -23,7 +23,6 @@ const Header = () => {
   return (
     <div className="py-8 mx-8 flex items-center justify-between">
       <img src={LOGO} alt="franq-logo" />
-
       {renderLogoutButton()}
     </div>
   );
