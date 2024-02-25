@@ -51,7 +51,6 @@ interface USD {
 
 const Dashboard = () => {
   const [filter, setFilter] = useState("");
-  const [color, setColor] = useState("");
 
   const { data: dataResponse, isLoading } = useQuery<DataResponse>({
     queryKey: ["currency"],
@@ -60,21 +59,10 @@ const Dashboard = () => {
         "http://localhost:3333/results?_page=1&_per_page=10"
       );
       const data = await response.json();
-      console.log(data, "data");
 
       return data;
     },
   });
-
-  function getVariationColors(variation: number) {
-    if (variation > 0) {
-      return "green";
-    } else if (variation < 0) {
-      return "red";
-    } else {
-      return "blue";
-    }
-  }
 
   if (isLoading) {
     return null;
