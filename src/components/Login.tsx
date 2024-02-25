@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { CircleUserRound, LockKeyhole } from "lucide-react";
 import { useEffect, useState } from "react";
 
+interface FormEvent extends React.FormEvent<HTMLFormElement> {
+  target: HTMLFormElement;
+}
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +24,7 @@ const Login = () => {
     }
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     const storedEmail = localStorage.getItem("email");

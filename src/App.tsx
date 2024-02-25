@@ -1,18 +1,14 @@
-import LOGO from "./assets/LOGO.svg";
 import Login from "./components/Login";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="h-screen">
-      <div className="py-8 mx-8 flex items-center justify-between">
-        <Link to="/login">
-          <img src={LOGO} alt="franq-logo" />
-        </Link>
-        <div className="bg-indigo-400 border-10 h-12 w-12 rounded-full"></div>
-      </div>
+      <Header />
+
       <div
         className="text-zinc-800 flex justify-center items-center h-2/3 bg-slate-300"
         style={{ backgroundImage: "url('./src/assets/background.png')" }}
