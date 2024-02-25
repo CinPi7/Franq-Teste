@@ -10,7 +10,6 @@ import {
   TableHeader,
   TableRow,
 } from "./Table";
-import { Pagination } from "./Pagination";
 import { useQuery } from "@tanstack/react-query";
 
 interface DataResponse {
@@ -55,9 +54,7 @@ const Dashboard = () => {
   const { data: dataResponse, isLoading } = useQuery<DataResponse>({
     queryKey: ["currency"],
     queryFn: async () => {
-      const response = await fetch(
-        "http://localhost:3333/results?_page=1&_per_page=10"
-      );
+      const response = await fetch("https://api.hgbrasil.com/finance");
       const data = await response.json();
 
       return data;

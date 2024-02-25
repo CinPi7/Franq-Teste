@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CircleUserRound, LockKeyhole } from "lucide-react";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +8,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     if (email === "" || password === "" || confirmPassword === "") {
