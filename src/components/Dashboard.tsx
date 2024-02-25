@@ -10,9 +10,64 @@ import {
   TableHeader,
   TableRow,
 } from "./Table";
+import { Pagination } from "./Pagination";
+import { useQuery } from "@tanstack/react-query";
+
+interface DataResponse {
+  currencies: Currencies;
+  stocks: Stocks;
+  available_sources: string[];
+  taxes: number[];
+}
+interface Stocks {
+  IBOVESPA: IBOVESPA;
+  IFIX: IBOVESPA;
+  NASDAQ: IBOVESPA;
+  DOWJONES: IBOVESPA;
+  CAC: IBOVESPA;
+  NIKKEI: IBOVESPA;
+}
+interface IBOVESPA {
+  name: string;
+  location: string;
+  points: number;
+  variation: number;
+}
+interface Currencies {
+  [key: string]: GBP | USD;
+}
+interface GBP {
+  name: string;
+  buy: number;
+  sell?: number;
+  variation: number;
+}
+interface USD {
+  name: string;
+  buy: number;
+  sell: number;
+  variation: number;
+}
 
 const Dashboard = () => {
   const [filter, setFilter] = useState("");
+
+  const { data: dataResponse, isLoading } = useQuery<DataResponse>({
+    queryKey: ["currency"],
+    queryFn: async () => {
+      const response = await fetch(
+        "http://localhost:3333/results?_page=1&_per_page=10"
+      );
+      const data = await response.json();
+      console.log(data, "data");
+
+      return data;
+    },
+  });
+
+  // if (isLoading) {
+  //   return null;
+  // }
 
   return (
     <div className="py-10 space-y-8 mx-8">
@@ -45,47 +100,59 @@ const Dashboard = () => {
                 <TableHead>Ações</TableHead>
               </TableRow>
             </TableHeader>
-            <TableBody>
-              {Array.from({ length: 10 }).map((value, index) => {
-                return (
-                  <TableRow key={index}>
-                    <TableCell></TableCell>
-                    <TableCell>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-zinc-100">USD</span>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-zinc-100">Dólar</span>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-zinc-100">4.99</span>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-zinc-100">4.998</span>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-zinc-100">
-                          -0.002
-                        </span>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <Button size="icon">
-                        <MoreHorizontal className="size-4"></MoreHorizontal>
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
+            {dataResponse && dataResponse.currencies && (
+              <TableBody>
+                {Object.keys(dataResponse.currencies).map((currency, index) => {
+                  if (currency === "source") return null;
+                  const getInfoCurrency = dataResponse.currencies[currency];
+                  return (
+                    <TableRow key={index}>
+                      <TableCell></TableCell>
+                      <TableCell>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-zinc-100">
+                            {currency}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-zinc-100">
+                            {getInfoCurrency.name}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-zinc-100">
+                            {getInfoCurrency.buy}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-zinc-100">
+                            {getInfoCurrency.sell}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex flex-col">
+                          <span className="font-medium text-zinc-100">
+                            {getInfoCurrency.variation}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell>
+                        <Button size="icon">
+                          <MoreHorizontal className="size-4"></MoreHorizontal>
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            )}
           </Table>
         </div>
       </main>

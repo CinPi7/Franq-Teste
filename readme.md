@@ -6,6 +6,13 @@ Teste Técnico!
 
 1. A UI possui tela inicial de login e registro de novo usuário, contendo campos de email e senha, com persistência destes em local storage. Os erros estão sendo tratados, de modo a deixar visível a ação desejada do usuário. Para melhorias, seria interessante armazenar os dados de maneira segura, evitando vulnerabilidades como XSS (Cross-Site Scripting) e outros tipos de ataques.
 
+2. Foi feita a comunicação com a API https://hgbrasil.com/status/finance, porém para evitar problemas com CORS em ambiente de desenvolvimento, foi utilizado o server json como servidor local. Os dados, dessa forma, foram simulados para deixar o ambiente preparado para receber os verdadeiros dados da API citada. Os dados foram apresentados por meio de uma tabela, definindo moeda, name, compra, venda, variação e ações.
+
+e buscar dados da
+cotação de 10 itens (moedas, ações, etc.);
+
+Para rodar o projeto, basta utilizar o `pnpm run dev` e `pnpm run server`.
+
 ---
 
 ● Conectar a aplicação à API https://hgbrasil.com/status/finance/ e buscar dados da
