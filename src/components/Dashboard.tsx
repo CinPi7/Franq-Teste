@@ -83,10 +83,13 @@ const Dashboard = () => {
     <div className="flex flex-col w-[90%] my-6">
       <div className="flex flex-row">
         <h1 className="text-xl text-white mb-2 font-bold">Finance</h1>
-        <button className="inline-flex items-center ml-6 justify-center gap-1.5 text-xs bg-indigo-400 text-zinc-950 font-bold rounded-full px-1.5 py-2 w-24 mb-4">
+        <Button
+          className="inline-flex items-center ml-6 justify-center gap-1.5 text-xs bg-indigo-400 text-zinc-950 font-bold rounded-full px-1.5 py-2 w-24 mb-4"
+          disabled
+        >
           <Plus className="size-3 text-zinc-950 font-bold" />
           Criar
-        </button>
+        </Button>
       </div>
       <div className="bg-zinc-800 opacity-80 max-h-[calc(100vh - 296px)] overflow-y-auto">
         <div className="py-10 space-y-8 mx-8">
@@ -99,9 +102,10 @@ const Dashboard = () => {
                     placeholder="Pesquise"
                     onChange={(e) => setFilter(e.target.value)}
                     value={filter}
+                    disabled
                   />
                 </Input>
-                <Button className="mx-3 rounded-full">
+                <Button className="mx-3 rounded-full" disabled>
                   <Filter className="size-3" /> Filter
                 </Button>
               </div>
@@ -175,7 +179,7 @@ const Dashboard = () => {
                               </div>
                             </TableCell>
                             <TableCell>
-                              <Button size="icon">
+                              <Button size="icon" disabled>
                                 <MoreHorizontal className="size-4"></MoreHorizontal>
                               </Button>
                             </TableCell>
