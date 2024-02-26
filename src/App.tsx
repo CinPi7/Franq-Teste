@@ -9,12 +9,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div
-        className="bg-cover bg-repeat flex justify-center h-[100vh]"
-        style={{
-          backgroundImage: "url('./src/assets/background.jpg')",
-        }}
-      >
+      <div className="bg-cover bg-repeat flex justify-center h-[100vh] bg-local bg-background">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="login" element={<Login />} />

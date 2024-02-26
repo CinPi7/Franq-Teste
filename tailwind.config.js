@@ -4,6 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: "Inter, sans-serif",
+      backgroundImage: {
+        background: "url('./src/assets/background.jpg')",
+      },
     },
   },
   plugins: [],
