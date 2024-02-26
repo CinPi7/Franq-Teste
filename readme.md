@@ -21,7 +21,7 @@ Para rodar o projeto, basta utilizar o `pnpm run dev` e `pnpm run server` e ajus
 ---
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/oDevBR/rgb-mixin?color=green">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/CinPi7/Franq-Teste?color=pink">
 
   <a href="https://www.linkedin.com/in/cinthiapissetti/" target="_blank" rel="noopener noreferrer">
     <img alt="Made by" src="https://img.shields.io/badge/made%20by-cinthia%20pissetti-pink">
