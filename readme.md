@@ -14,7 +14,9 @@
   </a>
 </p>
 
-## :open_file_folder: About the project
+Tecnologias utilizadas: Vite + React, TypeScript, com PNPM, TailwindCSS, entre outras tecnologias front-end para visualização de dados financeiros, como moedas :moneybag:.
+
+### :open_file_folder: About the project
 
 1. A UI possui tela inicial de login e registro de novo usuário, contendo campos de email e senha, com persistência destes em local storage. Os erros estão sendo tratados, de modo a deixar visível a ação desejada do usuário. Para melhorias, seria interessante armazenar os dados de maneira segura, evitando vulnerabilidades como XSS (Cross-Site Scripting) e outros tipos de ataques, além de melhorias com "lembrar senha" e outros possíveis erros.
 
@@ -35,8 +37,6 @@
 </p>
 
 ### :rocket: Technologies
-
-Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras para visualização de dados financeiros, como moedas.
 
 - [Vite](https://vitejs.dev/)
 - [ReactJS](https://reactjs.org/)
