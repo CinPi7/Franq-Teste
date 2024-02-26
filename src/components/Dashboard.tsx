@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./Button";
 import { Control, Input } from "./Input";
 import { Search, Filter, MoreHorizontal, Plus } from "lucide-react";
@@ -10,7 +10,6 @@ import {
   TableHeader,
   TableRow,
 } from "./Table";
-import { useQuery } from "@tanstack/react-query";
 
 interface DataResponse {
   currencies: Currencies;
@@ -50,16 +49,45 @@ interface USD {
 
 const Dashboard = () => {
   const [filter, setFilter] = useState("");
+  const [dataResponse, setDataResponse] = useState<DataResponse | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { data: dataResponse, isLoading } = useQuery<DataResponse>({
-    queryKey: ["currency"],
-    queryFn: async () => {
-      const response = await fetch("https://api.hgbrasil.com/finance");
-      const data = await response.json();
+  // const { data: dataResponse, isLoading } = useQuery<DataResponse>({
+  //   queryKey: ["currency"],
+  //   queryFn: async () => {
+  //     //https://raw.githubusercontent.com/CinPi7/MyAPI/master/financeAPI.json
+  //     const response = await fetch("https://api.hgbrasil.com/finance");
+  //     const data = await response.json();
+  //     console.log(data);
 
-      return data;
-    },
-  });
+  //     return data;
+  //   },
+  // });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://raw.githubusercontent.com/CinPi7/MyAPI/master/financeAPI.json"
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+
+        const data = await response.json();
+        console.log(data.results);
+
+        setDataResponse(data.results);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   if (isLoading) {
     return null;
