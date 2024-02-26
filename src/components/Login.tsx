@@ -67,6 +67,7 @@ const Login = () => {
               onChange={(event) => setEmail(event.target.value)}
               placeholder="username@email.com"
               type="email"
+              id="email"
               className="h-8 block w-72 py-3 text-sm text-zinc-300 bg-transparent border-2 rounded  border-b-3 border-indigo-400 appearance-none px-2   focus:outline-none focus:ring focus:ring-pink-200 "
             />
             <label
@@ -83,6 +84,7 @@ const Login = () => {
               onChange={(event) => setPassword(event.target.value)}
               placeholder="****"
               type="password"
+              id="password"
               className="h-8 block w-72 py-3 text-sm text-zinc-300 bg-transparent border-2 rounded  border-b-3 border-indigo-400 appearance-none px-2   focus:outline-none focus:ring focus:ring-pink-200 "
             />
             <label
