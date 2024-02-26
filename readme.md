@@ -30,13 +30,13 @@ Tecnologias utilizadas: Vite + React, TypeScript, com PNPM, TailwindCSS, entre o
 
 6. O deploy foi realizado na Vercel, utlizando o raw da API no GitHub, devido a persistência de problemas com acesso a API de modo seguro (CORS).
 
-### :rocket: Technologias
+### :rocket: Tecnologias
 
 - [Vite](https://vitejs.dev/)
 - [ReactJS](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 
-### :fountain: Getting started
+### :fountain: Começar Local
 
 **Clone the project and access the folder**
 
@@ -44,7 +44,7 @@ Tecnologias utilizadas: Vite + React, TypeScript, com PNPM, TailwindCSS, entre o
 $ git clone git@github.com:CinPi7/Franq-Teste.git && pnpm run dev && pnpm run server
 ```
 
-### :globe_with_meridians: Deploy com a Vercel
+### :globe_with_meridians: Deploy com a Vercel (clique no foguete)!
 
 <p align="center">
  <a target="_blank" rel="noopener noreferrer" href="https://franq-teste.vercel.app/login"><img width="50" height="50" src='https://cdn-icons-png.flaticon.com/512/4334/4334058.png' alt="Logo" /></a>
