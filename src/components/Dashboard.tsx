@@ -50,19 +50,7 @@ interface USD {
 const Dashboard = () => {
   const [filter, setFilter] = useState("");
   const [dataResponse, setDataResponse] = useState<DataResponse | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // const { data: dataResponse, isLoading } = useQuery<DataResponse>({
-  //   queryKey: ["currency"],
-  //   queryFn: async () => {
-  //     //https://raw.githubusercontent.com/CinPi7/MyAPI/master/financeAPI.json
-  //     const response = await fetch("https://api.hgbrasil.com/finance");
-  //     const data = await response.json();
-  //     console.log(data);
-
-  //     return data;
-  //   },
-  // });
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -76,8 +64,6 @@ const Dashboard = () => {
         }
 
         const data = await response.json();
-        console.log(data.results);
-
         setDataResponse(data.results);
         setIsLoading(false);
       } catch (error) {

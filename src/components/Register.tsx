@@ -31,7 +31,7 @@ const Register = () => {
         <h1 className="text-4xl text-indigo-100 font-bold text-center mb-6 ">
           Registrar
         </h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="register" name="register">
           <div className="relative my-4">
             <input
               required

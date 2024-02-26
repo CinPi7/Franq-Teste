@@ -59,7 +59,12 @@ const Login = () => {
         <h1 className="text-4xl text-indigo-100 font-bold text-center mb-6 ">
           Login
         </h1>
-        <form onSubmit={handleSubmit} className="overflow-auto pb-4">
+        <form
+          onSubmit={handleSubmit}
+          className="overflow-auto pb-4"
+          id="login"
+          name="login"
+        >
           <div className="relative my-4">
             <input
               required
