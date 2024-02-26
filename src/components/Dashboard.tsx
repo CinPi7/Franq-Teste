@@ -82,9 +82,9 @@ const Dashboard = () => {
       <div className="flex flex-row">
         <h1 className="text-xl text-white mb-2 font-bold">Finance</h1>
       </div>
-      <div className="bg-zinc-800 opacity-80 max-h-[calc(100vh - 296px)] overflow-y-auto">
+      <div className="bg-zinc-800 opacity-80  overflow-y-auto">
         <div className="py-10 space-y-8 mx-8">
-          <main className="max-w-6xl mx-auto space-y-5">
+          <main className="space-y-5">
             <div>
               <Table>
                 <TableHeader>
