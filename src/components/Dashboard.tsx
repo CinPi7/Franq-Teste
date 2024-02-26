@@ -54,7 +54,7 @@ const Dashboard = () => {
   const { data: dataResponse, isLoading } = useQuery<DataResponse>({
     queryKey: ["currency"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:3333/results");
+      const response = await fetch("https://api.hgbrasil.com/finance");
       const data = await response.json();
 
       return data;
