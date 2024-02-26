@@ -2,16 +2,15 @@
   "name": "franq-frontend",
   "homepage": "https://CinPi7.github.io/Franq-Teste",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "server": "json-server server.json -w --watch --port 3333"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.0.0",
