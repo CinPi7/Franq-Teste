@@ -38,7 +38,7 @@ Tecnologias utilizadas: Vite + React, TypeScript, com PNPM, TailwindCSS, entre o
 
 ### :fountain: Começar Local
 
-**Clone the project and access the folder**
+**Copie o projeto para acessá-lo**
 
 ```bash
 $ git clone git@github.com:CinPi7/Franq-Teste.git && pnpm run dev && pnpm run server
