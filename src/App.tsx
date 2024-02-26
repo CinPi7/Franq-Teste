@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="bg-cover bg-repeat flex justify-center h-full bg-zinc-800">
+      <div className="bg-cover bg-repeat flex justify-center h-[100vh] bg-zinc-800">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="login" element={<Login />} />
