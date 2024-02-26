@@ -1,6 +1,4 @@
-# :butterfly: Pessoa Engenheira de Software na Franq
-
-Teste Técnico!
+# :butterfly: Teste Técnico!
 
 ➜ Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras para visualização de dados financeiros, como moedas.
 
@@ -21,3 +19,23 @@ Teste Técnico!
 Para rodar o projeto, basta utilizar o `pnpm run dev` e `pnpm run server` e ajustar a URL.
 
 ---
+
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/oDevBR/rgb-mixin?color=green">
+
+  <a href="https://www.linkedin.com/in/joao-aquino/" target="_blank" rel="noopener noreferrer">
+    <img alt="Made by" src="https://img.shields.io/badge/made%20by-joao%20aquino-green">
+  </a>
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/oDevBR/rgb-mixin?color=green">
+
+  <a href="https://github.com/oDevBR/rgb-mixin/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/oDevBR/rgb-mixin?color=green">
+  </a>
+
+  <a href="https://github.com/oDevBR/moveit/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/oDevBR/rgb-mixin?color=green">
+  </a>
+
+  <img alt="GitHub" src="https://img.shields.io/github/license/oDevBR/rgb-mixin?color=green">
+</p>
