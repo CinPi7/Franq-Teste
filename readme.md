@@ -1,6 +1,6 @@
 # :butterfly: Teste Técnico!
 
-Informações Gerais:
+## :open_file_folder: About the project
 
 1. A UI possui tela inicial de login e registro de novo usuário, contendo campos de email e senha, com persistência destes em local storage. Os erros estão sendo tratados, de modo a deixar visível a ação desejada do usuário. Para melhorias, seria interessante armazenar os dados de maneira segura, evitando vulnerabilidades como XSS (Cross-Site Scripting) e outros tipos de ataques, além de melhorias com "lembrar senha" e outros possíveis erros.
 
@@ -31,13 +31,13 @@ Informações Gerais:
 
 </p>
 
-## 📖 About the project
+## :globe_with_meridians: Deploy
 
-## 🌐 Deploy
+<p align="center">
+ <a target="_blank" rel="noopener noreferrer" href="https://franq-teste.vercel.app/login"><img width="50" height="50" src='https://cdn-icons-png.flaticon.com/512/4334/4334058.png' alt="Logo" /></a>
+</p>
 
-### <a target="_blank" rel="noopener noreferrer" href="https://franq-teste.vercel.app/login"><img width="50" height="50" src='https://cdn-icons-png.flaticon.com/512/4334/4334058.png' alt="Logo" /></a>
-
-## 🚀 Technologies
+## :rocket: Technologies
 
 Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras para visualização de dados financeiros, como moedas.
 
@@ -45,7 +45,7 @@ Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras para v
 - [ReactJS](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 
-## 💻 Getting started
+### :fountain: Getting started
 
 **Clone the project and access the folder**
 
