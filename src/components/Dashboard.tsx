@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "./Button";
-import { Control, Input } from "./Input";
-import { Search, Filter, MoreHorizontal, Plus } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -48,7 +47,6 @@ interface USD {
 }
 
 const Dashboard = () => {
-  const [filter, setFilter] = useState("");
   const [dataResponse, setDataResponse] = useState<DataResponse | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
