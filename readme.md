@@ -1,6 +1,6 @@
 # :butterfly: Teste Técnico!
 
-➜ Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras para visualização de dados financeiros, como moedas.
+Informações Gerais:
 
 1. A UI possui tela inicial de login e registro de novo usuário, contendo campos de email e senha, com persistência destes em local storage. Os erros estão sendo tratados, de modo a deixar visível a ação desejada do usuário. Para melhorias, seria interessante armazenar os dados de maneira segura, evitando vulnerabilidades como XSS (Cross-Site Scripting) e outros tipos de ataques, além de melhorias com "lembrar senha" e outros possíveis erros.
 
@@ -13,10 +13,6 @@
 5. A interface é responsiva na web.
 
 6. O deploy foi realizado na Vercel, utlizando o raw da API no GitHub, devido a persistência de problemas com acesso a API de modo seguro (CORS).
-
-### :anchor: Caso queira baixar o projeto:
-
-Para rodar o projeto, basta utilizar o `pnpm run dev` e `pnpm run server` e ajustar a URL.
 
 ---
 
@@ -34,3 +30,25 @@ Para rodar o projeto, basta utilizar o `pnpm run dev` e `pnpm run server` e ajus
   </a>
 
 </p>
+
+## 📖 About the project
+
+## 🌐 Deploy
+
+### <a target="_blank" rel="noopener noreferrer" href="https://franq-teste.vercel.app/login"><img width="50" height="50" src='https://cdn-icons-png.flaticon.com/512/4334/4334058.png' alt="Logo" /></a>
+
+## 🚀 Technologies
+
+Tecnologias utilizadas: Vite + React, com PNPM, TailwindCSS, entre outras para visualização de dados financeiros, como moedas.
+
+- [Vite](https://vitejs.dev/)
+- [ReactJS](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+
+## 💻 Getting started
+
+**Clone the project and access the folder**
+
+```bash
+$ git clone git@github.com:CinPi7/Franq-Teste.git && pnpm run dev && pnpm run server
+```
