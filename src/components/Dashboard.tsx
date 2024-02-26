@@ -91,7 +91,7 @@ const Dashboard = () => {
                   <TableRow>
                     <TableHead></TableHead>
                     <TableHead>Moedas</TableHead>
-                    <TableHead>Name</TableHead>
+                    <TableHead>Nome</TableHead>
                     <TableHead>Compra</TableHead>
                     <TableHead>Venda</TableHead>
                     <TableHead>Variação</TableHead>
