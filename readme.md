@@ -50,10 +50,9 @@ $ git clone git@github.com:CinPi7/Franq-Teste.git && pnpm run dev && pnpm run se
  <a target="_blank" rel="noopener noreferrer" href="https://franq-teste.vercel.app/login"><img width="50" height="50" src='https://cdn-icons-png.flaticon.com/512/4334/4334058.png' alt="Logo" /></a>
 </p>
 
-[![veja o video](https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)]([https://youtu.be/vt5fpE0bzSY](https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)
+[[![veja o video](https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)]([https://youtu.be/vt5fpE0bzSY](https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)
 
 
-
-
+https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d)https://github.com/CinPi7/Franq-Teste/assets/49377882/3441451e-a46c-4d35-9049-918f2394fb4d
 
 
